@@ -763,6 +763,7 @@ alert(`el promedio de la clase es ${promedio}`);
     
 // };
 // let nun = new Array(5)
+/*
 
 let tamanio = parseInt(prompt("INGRESE LA CANTIDAD DE ESTUDIANTES"));
 let calificaciones = new Array(tamanio);
@@ -797,4 +798,393 @@ console.log(`la suma es ${suma}`);
 console.log(`el promedio es ${suma / tamanio}`);
 console.log(`calificacion maxima ${max}`);
 console.log(`calificacion minina ${min}`);
+
+*/
+
+///////// OBJETOS///////77
+/*
+let carro1 = {
+    marca : "ford",
+    modelo: "fiesta",
+    color: "rojo",
+    anio: "2000",
+    placa: "ABC123",
+}
+
+let carro2 = {
+    marca: "renault",
+    modelo: "logan",
+    color: "azul",
+    anio: "2019",
+    placa: "XYZ321",
+    acelerar (){
+        console.log(`el carro esta acelerando`)
+    }
+}
+
+console.log("datos carro 1", carro1)
+console.log("datos carro 2",carro2)
+
+console.log(`la marca del carro 1 es : ${carro1.marca}`)
+console.log(`la placa del carro 2 es : ${carro1.placa}`)
+
+carro1.marca = "toyota"
+carro1.color = "gris"
+
+console.log("los datos del vehiculo 1 son:",carro1)
+carro2.acelerar()
+
+
+
+class persona{
+    constructor(nombre,edad){
+        this._nombre = nombre;
+        this._edad = edad;
+    }
+    saludar(){
+        console.log(`hola soy ${this._nombre} y tengo ${this._edad} años`)
+    }
+
+
+    get nombre(){
+        return this._nombre;
+    }
+    set nombre(nombre){
+        this._nombre = this.nombre
+    }
+    get edad(){
+        return this._edad;
+    }
+    set edad(edad){
+        this._edad=this.edad;
+    }
+}
+
+const per1 = new persona("juan",25);
+per1.saludar();
+const per2 = new persona("andres",27);
+
+per1.nombre= "lorena";
+
+
+per1.saludar();
+per2.saludar();
+*/
+/*
+class Libro{
+
+    constructor(titulo,autor,paginas){
+
+        this._titulo = titulo;
+        this._autor = autor;
+        this._paginas = paginas;
+    }
+    get titulo(){
+        return this._titulo;
+    }
+    set titulo(titulo){
+        this._titulo = titulo;
+    }
+    get autor(){
+        return this._autor;
+    }
+    set autor(autor){
+        this._autor = autor
+    }
+    get paginas(){
+        return this._paginas;
+    }
+    set paginas(paginas){
+        this._paginas = paginas;
+    }
+
+    mostrarInfo(){
+      console.log(`el titulo del libro es: ${this._titulo} el autor es: ${this._autor} y tiene ${this._paginas} paginas`)  
+    }
+
+}   
+
+const l1 = new Libro(`el relaro de un naufrago`,`pepito`,`230`);
+const l2 = new Libro(`el principito`,`jorge`,`180`);
+const l3 = new Libro(`el programador`,`lucia`,`430`);
+
+console.log(l1.titulo)
+console.log(l2.titulo)
+console.log(l3.titulo)
+
+l1.autor = "carlos";
+l2.autor = "pablo";
+l3.autor = "ana";
+
+l1.mostrarInfo()
+l2.mostrarInfo()
+l3.mostrarInfo()
+*/
+/*
+class Producto{
+
+    constructor (nombre,precio,cantidad){
+
+        this._nombre = nombre;
+        this._precio = precio;
+        this._cantidad = cantidad;
+    }
+
+    get nombre(){
+        return this._nombre;
+    }
+    set nombre(nombre){
+        this._nombre = nombre;
+    }
+    get precio(){
+        return this._precio;
+    }
+    set precio(precio){
+        this._precio = precio;
+    }
+    get cantidad(){
+        return this._cantidad;
+    }
+    set cantidad(cantidad){
+        this._cantidad =cantidad ;
+    }
+
+    mostrarNombreProducto(){
+        console.log(`el producto es ${this._nombre}`)
+    }
+    valorTotal(){
+        return this._precio * this._cantidad;
+    }
+    modificarCantidad(nuevaCantidad){
+        this._cantidad = nuevaCantidad;
+        console.log(`la nueva cantidad es: ${this._cantidad}`)
+    }
+}
+
+const producto1 = new Producto("Mouse",45000,5);
+const producto2 = new Producto("monitor",500000,7);
+
+
+producto1.mostrarNombreProducto();
+producto2.mostrarNombreProducto();
+
+console.log(`el valor en stock del producto1 es: ${producto1.valorTotal()}`);
+console.log(`el valor en stock del producto2 es: ${producto2.valorTotal()}`);
+
+producto1.modificarCantidad(10);
+producto2.modificarCantidad(4);
+
+console.log(`el valor en stock del producto 1  ahora es: ${Producto1.valorTotal()}`);
+
+/////////////////////////////////////////////////////////////////////7777
+
+
+class Producto{
+
+    constructor(nombre,precio,cantidad){
+
+        this._nombre = nombre;
+        this._precio = precio;
+        this._cantidad = cantidad
+    }
+
+
+    get nombre(){
+        return this._nombre;
+    }
+
+    set nombre(nombre){
+        this._nombre = nombre;
+    }
+
+    get precio(){
+        return this._precio;
+    }
+    set precio(precio){
+        this._precio = precio;
+    }
+
+    get cantidad(){
+        return this._cantidad;
+    }
+
+    set cantidad(cantidad){
+        this._cantidad = cantidad;
+    }
+
+
+    mostrarNombreProducto(){
+        console.log(`El nombre del producto es: ${this._nombre}, el precio es: ${this._precio} y la cantidad es: ${this._cantidad}`);
+    }
+    valorTotal(){
+      
+        return this._precio * this._cantidad;
+    }
+
+
+    modificarCantidad(nuevoCantidad){
+
+        this._cantidad = nuevoCantidad;
+
+        console.log(`La nueva cantidad es: ${this._cantidad}`)
+
+    }
+
+    anadirStock(nuevoCantidad){
+
+        return this._cantidad += nuevoCantidad;
+    }
+    venderStock(nuevoCantidad){
+        this._cantidad -= nuevoCantidad;
+    }
+
+
+    operacion(){
+        let n
+        nCantidad = parseFloat(prompt('Ingrese la nueva cantidad'));
+
+         let op = parseInt(prompt("Ingrese que tipo de operacion desea realizar 1. Añadir 2. Restar"));
+
+         if(op===1){
+            console.log(prod3.anadirStock(nCantidad));
+    
+        }else{
+
+         console.log(prod3.venderStock(nCantidad));
+        }
+    }
+    static crearProducto(){
+        let productos; 
+        let precios; 
+        let cantidades; 
+        
+        do{    
+        productos = prompt('Ingrese el nombre del producto');
+        }while(!productos)
+        do{
+        precios = parseFloat(prompt('Ingrese el precio del producto'));
+        }while(isNaN(precios)||precios<0)
+        do{
+        cantidades = parseFloat(prompt('Ingrese la cantidad del producto'));
+        }while(isNaN(cantidades)||cantidades<0)
+        return new Producto(productos, precios, cantidades);
+    }
+
+    
+
+}
+const prod1 = new Producto("Mouse", 45000, 5);
+const prod2 = new Producto("Monitor", 145000 , 3);
+
+
+const prod3 = Producto.crearProducto();
+
+
+
+prod1.mostrarNombreProducto();
+prod2.mostrarNombreProducto();
+prod3.mostrarNombreProducto();
+console.log(` El valor del producto 1 es: ${prod1.valorTotal()}`);
+console.log(` El valor del producto 2 es: ${prod2.valorTotal()}`);
+console.log(` El valor del producto 3 es: ${prod3.valorTotal()}`);
+
+
+prod3.operacion();
+
+
+prod1.modificarCantidad(8);
+prod2.modificarCantidad(6);
+
+
+
+prod1.mostrarNombreProducto();
+prod2.mostrarNombreProducto();
+prod3.mostrarNombreProducto();
+console.log(` El valor del producto 1 es: ${prod1.valorTotal()}`);
+console.log(` El valor del producto 2 es: ${prod2.valorTotal()}`);
+console.log(` El valor del producto 3 es: ${prod3.valorTotal()}`);
+*/
+
+// Crea una clase Termostato que tenga los atributos temperatura y estado (encendido o apagado).
+//  Debe tener métodos para subir la temperatura, bajar la temperatura, encender y apagar el termostato, y mostrar el estado actual.
+
+class Termostato{
+
+        constructor(temperatura,estado){
+            this._temperatura = temperatura
+            this._estado = estado
+        }
+
+        get temperatura(){
+             return this._temperatura;
+        }
+        set temperatura(Nueva_Temperatura){
+            this._temperatura=Nueva_Temperatura;
+        }
+        get estado(){
+            return this._estado;
+        }
+        set estado(Nuevo_Estado){
+            this._estado = Nuevo_Estado;
+        }
+        
+        subir_Temperatura(){
+            
+           if (this._estado !=="Encendido") {
+                console.log(`imposible ralizar la accion termostato esta apagado`)
+            }else{
+                this._temperatura += Math.floor(Math.random()*51)
+            }
+        }
+        bajar_Temperatura(){
+           if (this.temperatura >= 0){ 
+                this._temperatura -= Math.floor(Math.random()*51)
+        }else{
+            console.log(`imposible medir bajo cero`)
+        }
+        };
+        encender_Termostato(){
+        this._estado = "Encendido"; 
+        }
+        apagar_Termostato(){
+            this._estado = "Apagado";
+        }
+        presentar(){
+            console.log( `el estado actual del termostato es ${this._temperatura} - ${this._estado}`)
+            
+        }
+
+        menu(){
+            let  seleccion;
+            do{
+              seleccion = parseInt(prompt(`indique que desea realizar \n 1.subir temperatura \n 2. bajar temperatura \n 3.encender \n 4.apagar \n 5.salir`));
+            
+            switch(seleccion){
+                
+                case 1 :  this.subir_Temperatura()
+                break;
+                case 2 : this.bajar_Temperatura()
+                break;
+                case 3 :  this.encender_Termostato(); 
+                break
+                case 4 :  this.apagar_Termostato();
+                break;
+                case 5 : seleccion = 5
+                break;
+                default:  console.log("Opción no válida");
+            
+            }
+            }while(seleccion !== 5)
+        }
+        
+}
+const ter1 = new Termostato(0,"Apagado")
+const ter2 = new Termostato(0,"Apagado")
+
+
+ter1.menu();
+ter1.presentar();
+
+ter2.menu();
+ter2.presentar();
 
