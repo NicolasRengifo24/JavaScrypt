@@ -75,7 +75,7 @@ function temperatura(){
 
 let numero = parseInt(document.getElementById("dato1").value)
 
-let calculo = numero - 273.5
+let calculo = numero - 273.5;
 
 let res1 = document.getElementById("res");
 res1.innerHTML = (`resultado ${calculo}`);
